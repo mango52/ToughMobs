@@ -24,20 +24,23 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ToughMobs extends JavaPlugin implements Listener {
-	Logger log = Logger.getLogger("Minecraft");	 
-	public void onEnable() { 
+	Logger log = Logger.getLogger("Minecraft");
+
+	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 		PluginDescriptionFile pdf = getDescription();
-		log.info("["+pdf.getName()+"] v"+pdf.getVersion()+" by Mango enabled!"); 
-	} 
-	
-	public void onDisable(){ 
-		PluginDescriptionFile pdf = getDescription();
-		log.info("["+pdf.getName()+"] v"+pdf.getVersion()+" by Mango disabled!"); 
-		}
-	
-	@EventHandler
-	public void onEntityCombust(EntityCombustEvent event){
-		event.setCancelled(true);
-		}
+		log.info("[" + pdf.getName() + "] v" + pdf.getVersion()
+				+ " by Mango enabled!");
 	}
+
+	public void onDisable() {
+		PluginDescriptionFile pdf = getDescription();
+		log.info("[" + pdf.getName() + "] v" + pdf.getVersion()
+				+ " by Mango disabled!");
+	}
+
+	@EventHandler
+	public void onEntityCombust(EntityCombustEvent event) {
+		event.setCancelled(true);
+	}
+}
