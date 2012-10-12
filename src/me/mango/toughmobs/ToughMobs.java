@@ -17,6 +17,7 @@ package me.mango.toughmobs;
 
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityCombustEvent;
@@ -24,7 +25,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ToughMobs extends JavaPlugin implements Listener {
-	Logger log = Logger.getLogger("Minecraft");
+	final Logger log = Bukkit.getLogger();
 
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
