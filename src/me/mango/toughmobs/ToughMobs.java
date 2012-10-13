@@ -33,7 +33,7 @@ public class ToughMobs extends JavaPlugin implements Listener {
 		getLogger().info(getDescription().getName() + " " + getDescription().getVersion() + " by Mango enabled.");
 	}
 
-	@EventHandler
+	@EventHandler(ignoreCancelled = true)
 	public void onEntityCombust(EntityCombustEvent event) {
 		event.setCancelled(true);
 	}
